@@ -3,6 +3,9 @@ import { hightlightsSlides } from "../constants";
 import gsap from "gsap";
 import { pauseImg, playImg, replayImg } from "../utils";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const VideoCarousel = () => {
   const videoRef = useRef([]);
@@ -136,7 +139,7 @@ const VideoCarousel = () => {
         {hightlightsSlides.map((list, i) => (
           <div key={list.id} id="slider" className="sm:pr-20 pr-10">
             <div className="video-carousel_container">
-              <div className="w-full h-full flex-center rounded-3xl overflow-hidden bg-black">
+              <div className="w-full h-full flex-center rounded-3xl  overflow-hidden bg-black">
                 <video
                   id="video"
                   playsInline={true}
