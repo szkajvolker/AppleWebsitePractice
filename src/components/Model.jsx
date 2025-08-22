@@ -62,24 +62,28 @@ const Model = () => {
 
         <div className="flex flex-col items-center mt-5">
           <div className="w-full h-[75vh] md:h-[90vh] overflow-hidden relative">
-            <ModelView
-              index={1}
-              groupRef={small}
-              gsapType="view1"
-              controlRef={cameraControlSmall}
-              setRotationState={setSmallRotation}
-              item={model}
-              size={size}
-            />
-            <ModelView
-              index={2}
-              groupRef={large}
-              gsapType="view2"
-              controlRef={cameraControlLarge}
-              setRotationState={setLargeRotation}
-              item={model}
-              size={size}
-            />
+            {size === "small" && (
+              <ModelView
+                index={1}
+                groupRef={small}
+                gsapType="view1"
+                controlRef={cameraControlSmall}
+                setRotationState={setSmallRotation}
+                item={model}
+                size={size}
+              />
+            )}
+            {size === "large" && (
+              <ModelView
+                index={2}
+                groupRef={large}
+                gsapType="view2"
+                controlRef={cameraControlLarge}
+                setRotationState={setLargeRotation}
+                item={model}
+                size={size}
+              />
+            )}
 
             <Canvas
               className="w-full h-full"

@@ -26,9 +26,9 @@ const VideoCarousel = () => {
 
   useGSAP(() => {
     // slider animation to move the video out of the screen and bring the next video in
-    const xValue = window.innerWidth < 640 ? -149 * videoId : -95 * videoId;
+
     gsap.to("#slider", {
-      transform: `translateX(${xValue}%)`,
+      transform: `translateX(${-100 * videoId}%)`,
       duration: 2,
       ease: "power2.inOut", // show visualizer https://gsap.com/docs/v3/Eases
     });
@@ -60,7 +60,7 @@ const VideoCarousel = () => {
           // get the progress of the video
           const progress = Math.ceil(anim.progress() * 100);
 
-          if (progress !== currentProgress) {
+          if (progress != currentProgress) {
             currentProgress = progress;
 
             // set the width of the progress bar
@@ -157,9 +157,9 @@ const VideoCarousel = () => {
 
   return (
     <>
-      <div id="slider" className="flex w-full items-center">
+      <div className="flex items-center">
         {hightlightsSlides.map((list, i) => (
-          <div key={list.id} className="sm:ml-20 mr-20">
+          <div key={list.id} id="slider" className="sm:pr-20 pr-10">
             <div className="video-carousel_container">
               <div className="w-full h-full flex-center rounded-3xl overflow-hidden bg-black">
                 <video

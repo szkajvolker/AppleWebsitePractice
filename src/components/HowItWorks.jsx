@@ -20,12 +20,14 @@ const HowItWorks = () => {
 
     animateWithGsap(".g_fadeIn", { opacity: 1, y: 0, duration: 1, ease: "power2.inOut" });
   }, []);
+
   return (
-    <section className="common-padding">
+    <section className="common-padding" style={{ overflowX: "hidden" }}>
       <div className="screen-max-width">
         <div id="chip" className="flex-center w-full my-20">
           <img src={chipImg} alt="chip" width={180} height={180} />
         </div>
+
         <div className="flex flex-col items-center">
           <h2 className="hiw-title">
             A17 Pro chip.
@@ -54,12 +56,12 @@ const HowItWorks = () => {
               </video>
             </div>
           </div>
-          <p className="text-gray font-bold text-center mt-3">Honkai: Star Rail</p>
+          <p className="text-gray font-semibold text-center mt-3">Honkai: Star Rail</p>
         </div>
         <div className="hiw-text-container">
-          <div className=" flex flex-1 justify-center text-bold flex-col">
+          <div className=" flex flex-1 justify-center flex-col">
             <p className="hiw-text g_fadeIn">
-              <span className="text-white font-bold" id="A17chip">
+              <span className="text-white" id="A17chip">
                 A17 Pro{" "}
               </span>
               is an enterly new class of iPhone chip that deliveres our{" "}
