@@ -26,8 +26,9 @@ const VideoCarousel = () => {
 
   useGSAP(() => {
     // slider animation to move the video out of the screen and bring the next video in
+    const xValue = window.innerWidth < 640 ? -149 * videoId : -95 * videoId;
     gsap.to("#slider", {
-      transform: `translateX(${-100 * videoId}%)`,
+      transform: `translateX(${xValue}%)`,
       duration: 2,
       ease: "power2.inOut", // show visualizer https://gsap.com/docs/v3/Eases
     });
@@ -158,7 +159,7 @@ const VideoCarousel = () => {
     <>
       <div id="slider" className="flex w-full items-center">
         {hightlightsSlides.map((list, i) => (
-          <div key={list.id} className="sm:mr-10 ml-40">
+          <div key={list.id} className="sm:ml-20 mr-20">
             <div className="video-carousel_container">
               <div className="w-full h-full flex-center rounded-3xl overflow-hidden bg-black">
                 <video
