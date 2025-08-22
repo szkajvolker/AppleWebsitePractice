@@ -11,9 +11,14 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@react-three/drei": "^10.7.3",
+    "@react-three/fiber": "^9.3.0",
+    "@sentry/react": "^10.5.0",
+    "@sentry/vite-plugin": "^4.1.1",
     "gsap": "^3.13.0",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "three": "^0.179.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
